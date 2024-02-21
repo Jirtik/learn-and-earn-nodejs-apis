@@ -22,6 +22,15 @@ const jobappliedSchema = new Schema({
     appliedby:{
         type:String,
     },
+    status:{
+        type:String,
+    },
+    date:{
+        type:String,
+    },
+    time:{
+        type:String,
+    },
 });
 
 const jobappliedModel = db.model('jobapplied',jobappliedSchema);

@@ -9,7 +9,6 @@ const startedRoute = require("./routers/started.route");
 const quizRoute = require("./routers/quiz.route");
 const jobRoute = require("./routers/job.router");
 const jobappliedRoute = require("./routers/jobapplied.route");
-const interviewRoute = require("./routers/interview.route");
 
 const app = express();
 app.use(bodyParser.json());
@@ -22,6 +21,5 @@ app.use("/",startedRoute);
 app.use("/",quizRoute);
 app.use("/",jobRoute);
 app.use("/",jobappliedRoute);
-app.use("/",interviewRoute);
 
 module.exports = app;

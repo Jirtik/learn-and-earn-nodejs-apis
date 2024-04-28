@@ -1,9 +1,9 @@
 const quizmodel = require('../model/quiz.modal');
 
 class QuizService{
-    static async registerquiz(courseid,title,duration,questionanswer,user){
+    static async registerquiz(courseid,duration,questionanswer,user){
          try{
-             const cretequiz = new quizmodel({courseid,title,duration,questionanswer,user});
+             const cretequiz = new quizmodel({courseid,duration,questionanswer,user});
              return await cretequiz.save();
          } catch(e){
              console.log(e)
@@ -13,7 +13,7 @@ class QuizService{
 
     static async getonequiz(courseid){
         try{
-            return await quizmodel.findOne({courseid});
+            return await quizmodel.findById(courseid);
         } catch(e){
             console.log(e)
                 res.json({status:false,sucess:"server error service chcekuser"});

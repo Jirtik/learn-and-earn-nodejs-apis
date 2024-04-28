@@ -19,6 +19,14 @@ const playlistSchema = new Schema({
     vid:{
         type:String,
     },
+    qid:{
+        type:String,
+    },
+    user:[
+        {
+            type:String,
+        }
+    ]
 });
 
 const playlistModel = db.model('playlist',playlistSchema);

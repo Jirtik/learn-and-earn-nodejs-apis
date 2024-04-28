@@ -7,12 +7,15 @@ const startedSchema = new Schema({
     number:{
         type:String,
     },
-    title:{
+    courseid:{
         type:String,
     },
-    vnum:{
+    v:[{
         type:String,
-    },
+    }],
+    q:[{
+        type:String,
+    }],
 });
 
 const startedModel = db.model('started',startedSchema);

@@ -19,9 +19,6 @@ const courseSchema = new Schema({
     title:{
         type:String,
     },
-    tvideo:{
-        type:String,
-    },
     ins:{
         type:String,
     },

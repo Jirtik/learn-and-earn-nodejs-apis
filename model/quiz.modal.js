@@ -6,11 +6,6 @@ const { Schema } = mongoose;
 const quizSchema = new Schema({
     courseid:{
         type:String,
-        require:true
-    },
-    title:{
-        type:String,
-        require:true
     },
     duration:{
         type:String,

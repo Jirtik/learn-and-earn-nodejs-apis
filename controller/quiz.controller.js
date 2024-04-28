@@ -2,9 +2,9 @@ const quizService = require('../services/quiz.service');
 
 exports.registerquiz = async(req,res,next)=>{
     try{
-        const {courseid,title,duration,questionanswer,user} = req.body;
-        const response = await quizService.registerquiz(courseid,title,duration,questionanswer,user);
-        res.json({status:true,sucess:"Quiz registered Sucessfully"});
+        const {courseid,duration,questionanswer,user} = req.body;
+        const response = await quizService.registerquiz(courseid,duration,questionanswer,user);
+        res.json({status:true,sucess:"Quiz registered Sucessfully",id:response._id});
     } catch (e){
         console.log(e)
         res.json({status:false,sucess:"server error controller register"});

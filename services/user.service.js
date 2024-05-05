@@ -25,6 +25,24 @@ class UserService{
     return jwt.sign(tokenData,secretKey,{expiresIn:jwt_expiry});
    }
 
+   static async deleteuser(id){
+    try{
+        return await usermodel.findByIdAndDelete(id);
+    } catch(e){
+        console.log(e)
+        res.json({status:false,sucess:"server error service adver"});
+    }
+   }
+
+   static async alluser(){
+    try{
+        return await usermodel.find();
+    } catch(e){
+        console.log(e)
+        res.json({status:false,sucess:"server error service adver"});
+    }
+   }
+
 }
 
 module.exports = UserService;

@@ -33,3 +33,15 @@ exports.updatejob = async(req,res,next)=>{
         res.json({status:false});
     }
 }
+
+
+exports.deletejob = async(req,res,next)=>{
+    try{
+        const {id} = req.body;
+        const a = await jobService.deletejob(id);
+        res.status(200).json({status:true});
+    } catch (e){
+        console.log(e)
+        res.json({status:false});
+    }
+}

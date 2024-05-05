@@ -48,3 +48,25 @@ exports.getoneuserdata = async(req,res,next)=>{
         res.json({status:false,sucess:"server error controller login"});
     }
 }
+
+
+exports.deleteuser = async(req,res,next)=>{
+    try{
+        const {id} = req.body;
+        const a = await UserService.deleteuser(id);
+        res.status(200).json({status:true});
+    } catch (e){
+        console.log(e)
+        res.json({status:false});
+    }
+}
+
+exports.alluser = async(req,res,next)=>{
+    try{
+        const a = await UserService.alluser();
+        res.status(200).json({status:true,data:a});
+    } catch (e){
+        console.log(e)
+        res.json({status:false,data:[]});
+    }
+}

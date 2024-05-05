@@ -3,29 +3,23 @@ const db = require('../config/db');
 
 const { Schema } = mongoose;
 
-const courseSchema = new Schema({
-    img:{
+const classSchema = new Schema({
+    name:{
         type:String,
     },
     des:{
         type:String,
     },
-    rating:{
+    date:{
         type:String,
     },
-    student:{
+    time:{
         type:String,
     },
-    title:{
-        type:String,
-    },
-    ins:{
-        type:String,
-    },
-    type:{
+    addedby:{
         type:String,
     }
 });
 
-const courseModel = db.model('course',courseSchema);
-module.exports = courseModel;
+const classModel = db.model('class',classSchema);
+module.exports = classModel;

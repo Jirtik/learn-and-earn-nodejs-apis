@@ -28,6 +28,16 @@ class jobService{
         res.json({status:false,sucess:"server error service register"});
     }
 }
+
+static async deletejob(id){
+    try{
+        return await jobmodel.findByIdAndDelete(id);
+    } catch(e){
+        console.log(e)
+        res.json({status:false,sucess:"server error service adver"});
+    }
+   }
+
 }
  
 module.exports = jobService;

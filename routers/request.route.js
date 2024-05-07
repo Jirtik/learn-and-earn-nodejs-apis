@@ -45,4 +45,16 @@ app.post('/changerequeststatus', async (req, res, next) => {
     }
 });
 
+
+app.post('/giverequest', async (req, res, next) => {
+  try {
+    const {uid,iid} = req.body;
+    const a = await requestmodel.findOne({uid,iid});
+    res.status(200).json({ status:true,data:a});
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ status:false,data:{}});
+  }
+});
+
 module.exports = app;
